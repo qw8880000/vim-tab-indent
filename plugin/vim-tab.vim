@@ -5,16 +5,35 @@ if exists("loaded_vim_tab")
 endif
 let loaded_vim_tab = 1
 
+if !exists("g:vim_tab_config")
+    let g:vim_tab_config = {'js': 2, 'html': 2, 'ejs': 2, 'css': 2}
+endif
+
+let s:config = g:vim_tab_config
 
 augroup vimTabGroup
-    au BufRead,BufNewFile *.{js} :call s:tabConfig(2) 
-    au BufRead,BufNewFile *.{html,ejs} :call s:tabConfig(2) 
-    au BufRead,BufNewFile *.{css} :call s:tabConfig(2) 
+
+    if exists('s:config.js')
+        au BufRead,BufNewFile *.{js} :call s:tabConfig(s:config.js) 
+    endif
+
+    if exists('s:config.html')
+        au BufRead,BufNewFile *.{html} :call s:tabConfig(s:config.html) 
+    endif
+
+    if exists('s:config.ejs')
+        au BufRead,BufNewFile *.{ejs} :call s:tabConfig(s:config.ejs) 
+    endif
+
+    if exists('s:config.css')
+        au BufRead,BufNewFile *.{css} :call s:tabConfig(s:config.css) 
+    endif
+
 augroup END
 
 " 设置tab的宽度
 function s:tabConfig(width)
-    
+
     if a:width == 2
         setlocal tabstop=2
         setlocal shiftwidth=2
