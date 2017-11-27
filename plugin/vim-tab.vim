@@ -9,6 +9,7 @@ let loaded_vim_tab = 1
 augroup vimTabGroup
     au BufRead,BufNewFile *.{js} :call s:tabConfig(2) 
     au BufRead,BufNewFile *.{html,ejs} :call s:tabConfig(2) 
+    au BufRead,BufNewFile *.{css} :call s:tabConfig(2) 
 augroup END
 
 " 设置tab的宽度
