@@ -1,15 +1,16 @@
 " Author: qw8880000<qw8880000@126.com>
 
-if exists("loaded_vim_tab")
+if exists("loaded_vim_tab_indent")
     finish
 endif
-let loaded_vim_tab = 1
+let loaded_vim_tab_indent = 1
 
-if !exists("g:vim_tab_config")
-    let g:vim_tab_config = {'js': 2, 'html': 2, 'ejs': 2, 'css': 2}
+if !exists("g:vim_tab_indent_config")
+    " let g:vim_tab_indent_config = {'js': 2, 'html': 2, 'ejs': 2, 'css': 2}
+    finish
 endif
 
-let s:config = g:vim_tab_config
+let s:config = g:vim_tab_indent_config
 
 augroup vimTabGroup
 
