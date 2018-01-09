@@ -1,4 +1,4 @@
-# vim-tab
+# vim-tab-indent
 
 vim-tab is used to set the tab width(or indent). 
 Now it can be used for `*.js,*.html,*.ejs,*.css` files.
