@@ -30,6 +30,14 @@ augroup vimTabGroup
         au BufRead,BufNewFile *.{css} :call s:tabConfig(s:config.css) 
     endif
 
+    if exists('s:config.scss')
+        au BufRead,BufNewFile *.{scss} :call s:tabConfig(s:config.scss) 
+    endif
+
+    if exists('s:config.less')
+        au BufRead,BufNewFile *.{less} :call s:tabConfig(s:config.less) 
+    endif
+
 augroup END
 
 " 设置tab的宽度
