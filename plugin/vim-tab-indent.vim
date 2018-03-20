@@ -38,6 +38,10 @@ augroup vimTabGroup
         au BufRead,BufNewFile *.{less} :call s:tabConfig(s:config.less) 
     endif
 
+    if exists('s:config.json')
+        au BufRead,BufNewFile *.{json} :call s:tabConfig(s:config.json) 
+    endif
+
 augroup END
 
 " 设置tab的宽度
